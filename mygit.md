@@ -19,7 +19,18 @@
 1.创建本地ssh密钥，作用：告诉远程仓库 是你自己推送的消息
 $ ssh-keygen -t rsa -C "emailAddress"
 
-查看生成的公钥
+2.查看生成的公钥
 $ cat ~/.ssh/id_rsa.pub
 
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCv30/TiP5IoPE5TEmk5Dk+xlQkz5GGBreL/mX9DPUYY63sWuPNQu65BuI1LzZvGaEsLvEr5MlvUeYkfGGdDN091BygYMsP7oc2ZJiaEdv9Z68xhfuKNsYQURFamDvH3dV/Q0M7ttyAqXZx3R9DauS3mRjApE5p67eWbXJGLMtG58/eFWtyJPe0PluxrDOoAGhNiwJeFBlXE1gkhNsYCSiS5FWBOy906gdpr/Dx14h4608FX+NRR5Gcnbt8c4kKQZ2L++Gfibk3IKszZOhDhO5N/1GApwy2nBTB4c6bQPZdvpRtORYEjDI821vOEwJylBPRZqR4lk+MNjz9aBf4myQiu6kKPCnxjXKv2HkFsk6Znw8opaH/v7KaYSEKa88CWg0I4v0PmuijtLbYLEv3BCXq1pVdHcJVfqLXYpNgyI40ue58I8VloSLQRvREGjcgk4oz+djIuzEX3K2uk6BOVG8vminQZTqp1aYkITDrEhmOSCaOLW0IE9dxZJRtnAqe1Yk= 1982708792@qq.com
+
+
+3.在远程上新建密钥
+将本地公钥 复制到远程公钥上，建立本地与远程的关系
+4.将本地仓库与远程仓库进行连接通信
+$ git remote add origin https://github.com/zhangxiujuan123/test-git-github.git
+
+$ git push -u origin master
+
+5.修改
+修改项目内容，须再次git add 文件名，然后再git commit -m "描述"，最后再git push -u origin master
